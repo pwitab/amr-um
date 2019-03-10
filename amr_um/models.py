@@ -25,8 +25,8 @@ class DlmsPushMessage:
     def format_topic(self, schema_version):
         return (
             f'{self.BASE_TOPIC}'
-            f'.{self.source_address}'
-            f'.{self.source_port}'
+            # f'.{self.source_address}'
+            # f'.{self.source_port}'
             f'.{schema_version}'
         )
 
