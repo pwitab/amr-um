@@ -37,12 +37,4 @@ class MeterValueSchema(AmrUmSchema):
     series = fields.String()
     timestamp = fields.DateTime(format='iso')
     value = fields.Decimal(as_string=True)
-    id_type = fields.String(
-        validate=[
-            OneOf(['name',
-                  'dlms_logical_name',
-                  'dlms_system_title',
-                  'manufacturer_serial',
-                  'external'])
-        ]
-    )
+

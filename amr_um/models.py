@@ -36,28 +36,23 @@ class MeterValue:
     New Meter Value are meter readings for input in Utilitarian. They
     have not yet been validated and not all information is known about them.
 
-    :param str meter: Meter Identification. Default type is the name of the
-        meter. Depending on the application generating the raw values different
-        identification schemes might be used. Which the meter refers to can be
-        sent in the id_type parameter
+    :param str meter: Meter Identification.name of the
+        meter.
 
     :param str series: Meter Reading Series name. What series on the meter this
         value refers to.
     :param str timestamp: Time when the value was registered.
     :param str value: Value
-    :param str id_type: What type of identification is the parameter meter
-        referring to. Default is name.
 
     """
     BASE_TOPIC = 'new_meter_value'
 
-    def __init__(self, meter, series, timestamp, value, id_type='name'):
+    def __init__(self, meter, series, timestamp, value):
 
         self.meter = meter
         self.series = series
         self.timestamp = timestamp
         self.value = value
-        self.id_type = id_type
 
         # TODO: handle dots in series name.
 
