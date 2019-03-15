@@ -8,6 +8,15 @@ class DlmsWrapper:
         self.destination_wport = destination_wport
         self.version = version
 
+    def __repr__(self):
+        return (
+            f'{self.__class__.__name__}('
+            f'source_wport={self.source_wport!r}, '
+            f'destination_wport={self.destination_wport!r}, '
+            f'version={self.version!r}'
+            f')'
+        )
+
 
 class DlmsPushMessage:
     BASE_TOPIC = 'new_dlms_push_message'
@@ -28,6 +37,18 @@ class DlmsPushMessage:
             # f'.{self.source_address}'
             # f'.{self.source_port}'
             f'.{schema_version}'
+        )
+
+    def __repr__(self):
+        return (
+            f'{self.__class__.__name__}('
+            f'payload={self.payload!r}, '
+            f'dlms_wrapper={self.dlms_wrapper!r}, '
+            f'transport={self.transport!r}, '
+            f'source_address={self.source_address}, '
+            f'source_port={self.source_port}, '
+            f'appliation_context={self.application_context!r}'
+            f')'
         )
 
 
@@ -62,4 +83,14 @@ class MeterValue:
             f'.{self.meter}'
             f'.{self.series}'
             f'.{schema_version}'
+        )
+
+    def __repr__(self):
+        return (
+            f'{self.__class__.__name__}('
+            f'meter={self.meter!r}, '
+            f'series={self.series!r}, '
+            f'timestamp={self.timestamp!r}, '
+            f'value={self.value!r}'
+            f')'
         )
