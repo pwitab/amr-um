@@ -47,17 +47,17 @@ class DlmsPushMessage:
             f'transport={self.transport!r}, '
             f'source_address={self.source_address}, '
             f'source_port={self.source_port}, '
-            f'appliation_context={self.application_context!r}'
+            f'application_context={self.application_context!r}'
             f')'
         )
 
 
-class MeterValue:
+class NewMeterReading:
     """
-    New Meter Value are meter readings for input in Utilitarian. They
+    New Meter Readings are meter readings for input in Utilitarian. They
     have not yet been validated and not all information is known about them.
 
-    :param str meter: Meter Identification.name of the
+    :param str meter: Meter Identification. Name of the
         meter.
 
     :param str series: Meter Reading Series name. What series on the meter this
@@ -66,7 +66,7 @@ class MeterValue:
     :param str value: Value
 
     """
-    BASE_TOPIC = 'new_meter_value'
+    BASE_TOPIC = 'new_meter_reading'
 
     def __init__(self, meter, series, timestamp, value):
 

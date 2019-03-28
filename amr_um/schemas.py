@@ -30,8 +30,8 @@ class DlmsPushMessageSchema(AmrUmSchema):
     dlms_wrapper = fields.Nested(DlmsWrapperSchema)
 
 
-class MeterValueSchema(AmrUmSchema):
-    __model__ = models.MeterValue
+class NewMeterReadingSchema(AmrUmSchema):
+    __model__ = models.NewMeterReading
 
     meter = fields.String()
     series = fields.String()
